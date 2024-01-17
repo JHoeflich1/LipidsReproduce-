@@ -1,0 +1,26 @@
+                      :-) GROMACS - gmx mdrun, 2023.1 (-:
+
+Executable:   /projects/nasc4134/pkgs/gromacs-2023.1/bin/gmx_mpi
+Data prefix:  /projects/nasc4134/pkgs/gromacs-2023.1
+Working dir:  /projects/juho8819/LipidsReproduceGMX
+Command line:
+  gmx_mpi mdrun -deffnm md -cpi md.cpt~
+
+
+Back Off! I just backed up md.log to ./#md.log.2#
+Reading file md.tpr, VERSION 2023.1 (single precision)
+Can not increase nstlist because verlet-buffer-tolerance is not set or used
+Update groups can not be used for this system because there are three or more consecutively coupled constraints
+
+Using 64 MPI processes
+Using 1 OpenMP thread per MPI process
+
+
+Back Off! I just backed up md.xtc to ./#md.xtc.2#
+
+Back Off! I just backed up md.edr to ./#md.edr.2#
+
+WARNING: This run will generate roughly 3110 Mb of data
+
+starting mdrun 'Title'
+100000000 steps, 200000.0 ps.

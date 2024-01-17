@@ -1,0 +1,38 @@
+--------------------------------------------------------------------------
+WARNING: There is at least non-excluded one OpenFabrics device found,
+but there are no active ports detected (or Open MPI was unable to use
+them).  This is most certainly not what you wanted.  Check your
+cables, subnet manager configuration, etc.  The openib BTL will be
+ignored for this job.
+
+  Local host: c3cpu-a9-u3-2
+--------------------------------------------------------------------------
+                      :-) GROMACS - gmx mdrun, 2023.1 (-:
+
+Executable:   /projects/nasc4134/pkgs/gromacs-2023.1/bin/gmx_mpi
+Data prefix:  /projects/nasc4134/pkgs/gromacs-2023.1
+Working dir:  /projects/juho8819/LipidsReproduceGMX
+Command line:
+  gmx_mpi mdrun -deffnm md -cpi md.cpt~
+
+
+Back Off! I just backed up md.log to ./#md.log.1#
+Reading file md.tpr, VERSION 2023.1 (single precision)
+Can not increase nstlist because verlet-buffer-tolerance is not set or used
+Update groups can not be used for this system because there are three or more consecutively coupled constraints
+
+Using 64 MPI processes
+Using 1 OpenMP thread per MPI process
+
+
+Back Off! I just backed up md.xtc to ./#md.xtc.1#
+
+Back Off! I just backed up md.edr to ./#md.edr.1#
+
+WARNING: This run will generate roughly 3110 Mb of data
+
+starting mdrun 'Title'
+100000000 steps, 200000.0 ps.
+[c3cpu-a9-u3-2.rc.int.colorado.edu:1881712] 63 more processes have sent help message help-mpi-btl-openib.txt / no active ports found
+[c3cpu-a9-u3-2.rc.int.colorado.edu:1881712] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
+slurmstepd: error: *** JOB 4388666 ON c3cpu-a9-u3-2 CANCELLED AT 2024-01-16T11:42:10 DUE TO TIME LIMIT ***

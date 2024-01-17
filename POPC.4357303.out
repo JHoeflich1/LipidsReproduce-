@@ -1,0 +1,348 @@
+                      :-) GROMACS - gmx grompp, 2023.1 (-:
+
+Executable:   /projects/nasc4134/pkgs/gromacs-2023.1/bin/gmx_mpi
+Data prefix:  /projects/nasc4134/pkgs/gromacs-2023.1
+Working dir:  /projects/juho8819/LipidsReproduceGMX
+Command line:
+  gmx_mpi grompp -p topol.top -f min.mdp -c bilayer.gro -o min.tpr
+
+
+NOTE 1 [file min.mdp]:
+  rlist is equal to rvdw and/or rcoulomb: there is no explicit Verlet
+  buffer. The cluster pair list does have a buffering effect, but choosing
+  a larger rlist might be necessary for good energy conservation.
+
+Setting the LD random seed to -1665433985
+
+Generated 190 of the 190 non-bonded parameter combinations
+Generating 1-4 interactions: fudge = 0.5
+
+Generated 190 of the 190 1-4 parameter combinations
+
+Excluding 3 bonded neighbours molecule type 'TIP3P'
+
+Excluding 3 bonded neighbours molecule type 'POPC'
+Analysing residue names:
+There are:  5128      Other residues
+Analysing residues not classified as Protein/DNA/RNA/Water and splitting into groups...
+Number of degrees of freedom in T-Coupling group rest is 81453.00
+The integrator does not provide a ensemble temperature, there is no system ensemble temperature
+
+The largest distance between excluded atoms is 0.406 nm between atom 26834 and 26890
+Calculating fourier grid dimensions for X Y Z
+Using a fourier grid of 56x56x64, spacing 0.114 0.119 0.114
+
+Estimate for the relative computational load of the PME mesh part: 0.26
+
+This run will generate roughly 2 Mb of data
+
+There was 1 NOTE
+
+GROMACS reminds you: "The best part of winter in Stockholm is going to Australia" (Mark Abraham)
+
+                      :-) GROMACS - gmx mdrun, 2023.1 (-:
+
+Executable:   /projects/nasc4134/pkgs/gromacs-2023.1/bin/gmx_mpi
+Data prefix:  /projects/nasc4134/pkgs/gromacs-2023.1
+Working dir:  /projects/juho8819/LipidsReproduceGMX
+Command line:
+  gmx_mpi mdrun -deffnm min
+
+Reading file min.tpr, VERSION 2023.1 (single precision)
+Using 64 MPI processes
+Using 1 OpenMP thread per MPI process
+
+
+Steepest Descents:
+   Tolerance (Fmax)   =  1.00000e+01
+   Number of steps    =           -1
+
+Energy minimization has stopped, but the forces have not converged to the
+requested precision Fmax < 10 (which may not be possible for your system). It
+stopped because the algorithm tried to make a new step whose size was too
+small, or there was no change in the energy since last step. Either way, we
+regard the minimization as converged to within the available machine
+precision, given your starting configuration and EM parameters.
+
+Double precision normally gives you higher accuracy, but this is often not
+needed for preparing to run molecular dynamics.
+You might need to increase your constraint accuracy, or turn
+off constraints altogether (set constraints = none in mdp file)
+
+writing lowest energy coordinates.
+
+Steepest Descents did not converge to Fmax < 10 in 18999 steps.
+Potential Energy  = -2.9603888e+05
+Maximum force     =  1.7787494e+02 on atom 20123
+Norm of force     =  1.9203281e+00
+
+GROMACS reminds you: "You Can Always Go On Ricky Lake" (Offspring)
+
+                      :-) GROMACS - gmx grompp, 2023.1 (-:
+
+Executable:   /projects/nasc4134/pkgs/gromacs-2023.1/bin/gmx_mpi
+Data prefix:  /projects/nasc4134/pkgs/gromacs-2023.1
+Working dir:  /projects/juho8819/LipidsReproduceGMX
+Command line:
+  gmx_mpi grompp -p topol.top -f nvt.mdp -c min.gro -o nvt.tpr
+
+
+NOTE 1 [file nvt.mdp]:
+  rlist is equal to rvdw and/or rcoulomb: there is no explicit Verlet
+  buffer. The cluster pair list does have a buffering effect, but choosing
+  a larger rlist might be necessary for good energy conservation.
+
+Setting the LD random seed to 938704887
+
+Generated 190 of the 190 non-bonded parameter combinations
+Generating 1-4 interactions: fudge = 0.5
+
+Generated 190 of the 190 1-4 parameter combinations
+
+Excluding 3 bonded neighbours molecule type 'TIP3P'
+
+turning H bonds into constraints...
+
+Excluding 3 bonded neighbours molecule type 'POPC'
+
+turning H bonds into constraints...
+
+Setting gen_seed to 402488277
+
+Velocities were taken from a Maxwell distribution at 300 K
+Analysing residue names:
+There are:  5128      Other residues
+Analysing residues not classified as Protein/DNA/RNA/Water and splitting into groups...
+Number of degrees of freedom in T-Coupling group POPC is 40958.27
+Number of degrees of freedom in T-Coupling group TIP3P is 29998.73
+
+The largest distance between excluded atoms is 0.405 nm between atom 30025 and 30032
+Calculating fourier grid dimensions for X Y Z
+Using a fourier grid of 56x56x64, spacing 0.114 0.119 0.114
+
+Estimate for the relative computational load of the PME mesh part: 0.26
+
+This run will generate roughly 112 Mb of data
+
+There was 1 NOTE
+
+GROMACS reminds you: "Your Bones Got a Little Machine" (Pixies)
+
+                      :-) GROMACS - gmx mdrun, 2023.1 (-:
+
+Executable:   /projects/nasc4134/pkgs/gromacs-2023.1/bin/gmx_mpi
+Data prefix:  /projects/nasc4134/pkgs/gromacs-2023.1
+Working dir:  /projects/juho8819/LipidsReproduceGMX
+Command line:
+  gmx_mpi mdrun -deffnm nvt
+
+Reading file nvt.tpr, VERSION 2023.1 (single precision)
+Can not increase nstlist because verlet-buffer-tolerance is not set or used
+Update groups can not be used for this system because there are three or more consecutively coupled constraints
+
+Using 64 MPI processes
+Using 1 OpenMP thread per MPI process
+
+
+Back Off! I just backed up nvt.edr to ./#nvt.edr.1#
+starting mdrun 'Title'
+20000000 steps,  40000.0 ps.
+
+Writing final coordinates.
+
+
+Dynamic load balancing report:
+ DLB got disabled because it was unsuitable to use.
+ Average load imbalance: 17.0%.
+ The balanceable part of the MD step is 70%, load imbalance is computed from this.
+ Part of the total run time spent waiting due to load imbalance: 11.9%.
+ Average PME mesh/force load: 0.963
+ Part of the total run time spent waiting due to PP/PME imbalance: 0.7 %
+
+NOTE: 11.9 % of the available CPU time was lost due to load imbalance
+      in the domain decomposition.
+      You can consider manually changing the decomposition (option -dd);
+      e.g. by using fewer domains along the box dimension in which there is
+      considerable inhomogeneity in the simulated system.
+
+               Core t (s)   Wall t (s)        (%)
+       Time:   930582.849    14540.367     6400.0
+                         4h02:20
+                 (ns/day)    (hour/ns)
+Performance:      237.683        0.101
+
+GROMACS reminds you: "Even the *healthy* people move in clouds of cigarette smoke, women straining polyester, men in raggedly cutoffs slathering mayonnaise on foot-long hot dogs. It's as if the hotel were hosting a conference on adult onset diabetes" (Jess Walter)
+
+                      :-) GROMACS - gmx grompp, 2023.1 (-:
+
+Executable:   /projects/nasc4134/pkgs/gromacs-2023.1/bin/gmx_mpi
+Data prefix:  /projects/nasc4134/pkgs/gromacs-2023.1
+Working dir:  /projects/juho8819/LipidsReproduceGMX
+Command line:
+  gmx_mpi grompp -p topol.top -f npt.mdp -c nvt.gro -o npt.tpr
+
+
+NOTE 1 [file npt.mdp]:
+  rlist is equal to rvdw and/or rcoulomb: there is no explicit Verlet
+  buffer. The cluster pair list does have a buffering effect, but choosing
+  a larger rlist might be necessary for good energy conservation.
+
+Setting the LD random seed to 1215855606
+
+Generated 190 of the 190 non-bonded parameter combinations
+Generating 1-4 interactions: fudge = 0.5
+
+Generated 190 of the 190 1-4 parameter combinations
+
+Excluding 3 bonded neighbours molecule type 'TIP3P'
+
+turning H bonds into constraints...
+
+Excluding 3 bonded neighbours molecule type 'POPC'
+
+turning H bonds into constraints...
+
+Setting gen_seed to -1418199185
+
+Velocities were taken from a Maxwell distribution at 300 K
+Analysing residue names:
+There are:  5128      Other residues
+Analysing residues not classified as Protein/DNA/RNA/Water and splitting into groups...
+Number of degrees of freedom in T-Coupling group POPC is 40958.27
+Number of degrees of freedom in T-Coupling group TIP3P is 29998.73
+
+The largest distance between excluded atoms is 0.411 nm between atom 19221 and 19230
+Calculating fourier grid dimensions for X Y Z
+Using a fourier grid of 56x56x64, spacing 0.114 0.119 0.114
+
+Estimate for the relative computational load of the PME mesh part: 0.26
+
+This run will generate roughly 1086 Mb of data
+
+There was 1 NOTE
+
+GROMACS reminds you: "Even the *healthy* people move in clouds of cigarette smoke, women straining polyester, men in raggedly cutoffs slathering mayonnaise on foot-long hot dogs. It's as if the hotel were hosting a conference on adult onset diabetes" (Jess Walter)
+
+                      :-) GROMACS - gmx mdrun, 2023.1 (-:
+
+Executable:   /projects/nasc4134/pkgs/gromacs-2023.1/bin/gmx_mpi
+Data prefix:  /projects/nasc4134/pkgs/gromacs-2023.1
+Working dir:  /projects/juho8819/LipidsReproduceGMX
+Command line:
+  gmx_mpi mdrun -deffnm npt
+
+Reading file npt.tpr, VERSION 2023.1 (single precision)
+Can not increase nstlist because verlet-buffer-tolerance is not set or used
+Update groups can not be used for this system because there are three or more consecutively coupled constraints
+
+Using 64 MPI processes
+Using 1 OpenMP thread per MPI process
+
+starting mdrun 'Title'
+30000000 steps,  60000.0 ps.
+
+Writing final coordinates.
+
+
+Dynamic load balancing report:
+ DLB got disabled because it was unsuitable to use.
+ Average load imbalance: 17.3%.
+ The balanceable part of the MD step is 70%, load imbalance is computed from this.
+ Part of the total run time spent waiting due to load imbalance: 12.1%.
+ Average PME mesh/force load: 0.937
+ Part of the total run time spent waiting due to PP/PME imbalance: 1.2 %
+
+NOTE: 12.1 % of the available CPU time was lost due to load imbalance
+      in the domain decomposition.
+      You can consider manually changing the decomposition (option -dd);
+      e.g. by using fewer domains along the box dimension in which there is
+      considerable inhomogeneity in the simulated system.
+
+               Core t (s)   Wall t (s)        (%)
+       Time:  1416813.771    22137.727     6400.0
+                         6h08:57
+                 (ns/day)    (hour/ns)
+Performance:      234.170        0.102
+
+GROMACS reminds you: "The only greatness for man is immortality." (James Dean)
+
+                      :-) GROMACS - gmx grompp, 2023.1 (-:
+
+Executable:   /projects/nasc4134/pkgs/gromacs-2023.1/bin/gmx_mpi
+Data prefix:  /projects/nasc4134/pkgs/gromacs-2023.1
+Working dir:  /projects/juho8819/LipidsReproduceGMX
+Command line:
+  gmx_mpi grompp -f md.mdp -c npt.gro -t npt.cpt -p topol.top -o md.tpr
+
+Ignoring obsolete mdp entry 'title'
+Ignoring obsolete mdp entry 'ns_type'
+
+NOTE 1 [file md.mdp]:
+  rlist is equal to rvdw and/or rcoulomb: there is no explicit Verlet
+  buffer. The cluster pair list does have a buffering effect, but choosing
+  a larger rlist might be necessary for good energy conservation.
+
+Setting the LD random seed to -944250955
+Generating 1-4 interactions: fudge = 0.5
+
+Generated 190 of the 190 non-bonded parameter combinations
+
+Generated 190 of the 190 1-4 parameter combinations
+
+Excluding 3 bonded neighbours molecule type 'TIP3P'
+
+turning H bonds into constraints...
+
+Excluding 3 bonded neighbours molecule type 'POPC'
+
+turning H bonds into constraints...
+Analysing residue names:
+There are:  5128      Other residues
+Analysing residues not classified as Protein/DNA/RNA/Water and splitting into groups...
+Number of degrees of freedom in T-Coupling group POPC is 40958.27
+Number of degrees of freedom in T-Coupling group TIP3P is 29998.73
+
+The largest distance between excluded atoms is 0.413 nm between atom 31082 and 31100
+
+Reading Coordinates, Velocities and Box size from old trajectory
+
+Will read whole trajectory
+Last frame         -1 time 60000.000   
+
+Using frame at t = 60000 ps
+
+Starting time for run is 0 ps
+Calculating fourier grid dimensions for X Y Z
+Using a fourier grid of 64x72x80, spacing 0.098 0.092 0.092
+
+NOTE 2 [file md.mdp]:
+  This run will generate roughly 3149 Mb of data
+
+
+Estimate for the relative computational load of the PME mesh part: 0.47
+
+There were 2 NOTEs
+
+GROMACS reminds you: "The only greatness for man is immortality." (James Dean)
+
+                      :-) GROMACS - gmx mdrun, 2023.1 (-:
+
+Executable:   /projects/nasc4134/pkgs/gromacs-2023.1/bin/gmx_mpi
+Data prefix:  /projects/nasc4134/pkgs/gromacs-2023.1
+Working dir:  /projects/juho8819/LipidsReproduceGMX
+Command line:
+  gmx_mpi mdrun -deffnm md
+
+Reading file md.tpr, VERSION 2023.1 (single precision)
+Can not increase nstlist because verlet-buffer-tolerance is not set or used
+Update groups can not be used for this system because there are three or more consecutively coupled constraints
+
+Using 64 MPI processes
+Using 1 OpenMP thread per MPI process
+
+
+WARNING: This run will generate roughly 3110 Mb of data
+
+starting mdrun 'Title'
+100000000 steps, 200000.0 ps.
+slurmstepd: error: *** JOB 4357303 ON c3cpu-a5-u1-3 CANCELLED AT 2024-01-13T05:08:56 DUE TO TIME LIMIT ***
